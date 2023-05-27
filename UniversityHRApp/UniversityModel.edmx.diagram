@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a95897ebe9ec41bb8e09c31bff0586fc" Name="Diagram1">
+        <EntityTypeShape EntityType="UniversituHRModel.AcademicDegree" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.AcademicTitle" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Coutry" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Division" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Education" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.EducationalInstitution" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.EmploymentRecord" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Objects" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Organization" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Position" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Region" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Settlement" Width="1.5" PointX="3.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Specialization" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Street" Width="1.5" PointX="3.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Users" Width="1.5" PointX="8.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.UsersObjects" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversituHRModel.Worker" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_AcademicDegree" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_AcademicTitle" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Coutry" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Division" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Education_EducationalInstitution" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Education_Specialization" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Education_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_EmploymentRecord_Organization" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_EmploymentRecord_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_EmploymentRecord_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_UsersObjects_Objects" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Settlement" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_Worker_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversituHRModel.FK_UsersObjects_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

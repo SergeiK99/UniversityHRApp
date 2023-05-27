@@ -1,0 +1,31 @@
+﻿<Window x:Class="UniversityHRApp.Windows.ListEployRec"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniversityHRApp.Windows"
+        mc:Ignorable="d"
+        Title="Список записей в трудовых книжках" Height="450" Width="1117.867" Icon="/UniversityHRApp;component/iQdW6_Iz4Gg.jpg">
+    <Grid>
+        <DataGrid x:Name="dgRecord" HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="1110" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Worker.LastName}" Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding Worker.FirstName}" Header="Имя"/>
+                <DataGridTextColumn Binding="{Binding Worker.MiddleName}" Header="Отчество"/>
+                <DataGridTextColumn Binding="{Binding Organization.Name}" Header="Организация" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Position.Name}" Header="Должность" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding DateOfTheOrder, StringFormat=\{0:dd/MM/yyyy\}}" Header="Дата приказа" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding OrderNumber}" Header="Номер приказа" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding IncentivesAndPenalties}" Header="Вознаграждения/Наказания" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding DateOfEmployment, StringFormat=\{0:dd/MM/yyyy\}}" Header="Дата трудоустройства" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding DateOfDismissal, StringFormat=\{0:dd/MM/yyyy\}}" Header="Дата увольнения" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding ReasonForDismissal}" Header="Причина увольнения" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btAdd" Content="Добавить" HorizontalAlignment="Left" Margin="262,250,0,0" VerticalAlignment="Top" Width="606" Height="37" FontSize="22" Click="btAdd_Click"/>
+        <Button x:Name="btEdit" Content="Изменить" HorizontalAlignment="Left" Margin="262,287,0,0" VerticalAlignment="Top" Width="606" Height="37" FontSize="22" Click="btEdit_Click"/>
+        <Button x:Name="btDel" Content="Удалить" HorizontalAlignment="Left" Margin="262,324,0,0" VerticalAlignment="Top" Width="606" Height="37" FontSize="22" Click="btDel_Click"/>
+        <Button x:Name="btClose" Content="Выход" HorizontalAlignment="Left" Margin="262,361,0,0" VerticalAlignment="Top" Width="606" Height="37" FontSize="22" Click="btClose_Click"/>
+
+    </Grid>
+</Window>

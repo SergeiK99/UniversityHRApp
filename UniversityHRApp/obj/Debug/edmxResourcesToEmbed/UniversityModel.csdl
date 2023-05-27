@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UniversituHRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AcademicDegree">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_AcademicDegree" FromRole="AcademicDegree" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="AcademicTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_AcademicTitle" FromRole="AcademicTitle" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Coutry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Coutry" FromRole="Coutry" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Division" FromRole="Division" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EdInstitutionId" Type="Int32" />
+    <Property Name="SpecializationId" Type="Int32" />
+    <Property Name="WorkerId" Type="Int32" />
+    <Property Name="TypeOfDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YearOfGraduation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EducationalInstitution" Relationship="Self.FK_Education_EducationalInstitution" FromRole="Education" ToRole="EducationalInstitution" />
+    <NavigationProperty Name="Specialization" Relationship="Self.FK_Education_Specialization" FromRole="Education" ToRole="Specialization" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Education_Worker" FromRole="Education" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="EducationalInstitution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Education" Relationship="Self.FK_Education_EducationalInstitution" FromRole="EducationalInstitution" ToRole="Education" />
+  </EntityType>
+  <EntityType Name="EmploymentRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerId" Type="Int32" />
+    <Property Name="OrganizationId" Type="Int32" />
+    <Property Name="PositionId" Type="Int32" />
+    <Property Name="DateOfTheOrder" Type="DateTime" Precision="3" />
+    <Property Name="OrderNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IncentivesAndPenalties" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfEmployment" Type="DateTime" Precision="0" />
+    <Property Name="DateOfDismissal" Type="DateTime" Precision="0" />
+    <Property Name="ReasonForDismissal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Organization" Relationship="Self.FK_EmploymentRecord_Organization" FromRole="EmploymentRecord" ToRole="Organization" />
+    <NavigationProperty Name="Position" Relationship="Self.FK_EmploymentRecord_Position" FromRole="EmploymentRecord" ToRole="Position" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_EmploymentRecord_Worker" FromRole="EmploymentRecord" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Objects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UsersObjects" Relationship="Self.FK_UsersObjects_Objects" FromRole="Objects" ToRole="UsersObjects" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="Int64" />
+    <NavigationProperty Name="EmploymentRecord" Relationship="Self.FK_EmploymentRecord_Organization" FromRole="Organization" ToRole="EmploymentRecord" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmploymentRecord" Relationship="Self.FK_EmploymentRecord_Position" FromRole="Position" ToRole="EmploymentRecord" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Position" FromRole="Position" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Region" FromRole="Region" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Settlement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Settlement" FromRole="Settlement" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Specialization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Education" Relationship="Self.FK_Education_Specialization" FromRole="Specialization" ToRole="Education" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Street" FromRole="Street" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UsersObjects" Relationship="Self.FK_UsersObjects_Users" FromRole="Users" ToRole="UsersObjects" />
+  </EntityType>
+  <EntityType Name="UsersObjects">
+    <Key>
+      <PropertyRef Name="UsersId" />
+      <PropertyRef Name="ObjectsId" />
+    </Key>
+    <Property Name="UsersId" Type="Int32" Nullable="false" />
+    <Property Name="ObjectsId" Type="Int32" Nullable="false" />
+    <Property Name="C" Type="Boolean" Nullable="false" />
+    <Property Name="R" Type="Boolean" Nullable="false" />
+    <Property Name="U" Type="Boolean" Nullable="false" />
+    <Property Name="D" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Objects" Relationship="Self.FK_UsersObjects_Objects" FromRole="UsersObjects" ToRole="Objects" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UsersObjects_Users" FromRole="UsersObjects" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DivisionId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="RegionId" Type="Int32" />
+    <Property Name="SettlementId" Type="Int32" />
+    <Property Name="StreetId" Type="Int32" />
+    <Property Name="House" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Flat" Type="Int32" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="AcademicDegreeId" Type="Int32" />
+    <Property Name="AcademicTitleId" Type="Int32" />
+    <Property Name="PositionId" Type="Int32" />
+    <Property Name="PassportNumber" Type="Int64" />
+    <Property Name="DateOfIssuePassport" Type="DateTime" Precision="0" />
+    <Property Name="WhoIssuedPassport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="Int64" />
+    <NavigationProperty Name="AcademicDegree" Relationship="Self.FK_Worker_AcademicDegree" FromRole="Worker" ToRole="AcademicDegree" />
+    <NavigationProperty Name="AcademicTitle" Relationship="Self.FK_Worker_AcademicTitle" FromRole="Worker" ToRole="AcademicTitle" />
+    <NavigationProperty Name="Coutry" Relationship="Self.FK_Worker_Coutry" FromRole="Worker" ToRole="Coutry" />
+    <NavigationProperty Name="Division" Relationship="Self.FK_Worker_Division" FromRole="Worker" ToRole="Division" />
+    <NavigationProperty Name="Education" Relationship="Self.FK_Education_Worker" FromRole="Worker" ToRole="Education" />
+    <NavigationProperty Name="EmploymentRecord" Relationship="Self.FK_EmploymentRecord_Worker" FromRole="Worker" ToRole="EmploymentRecord" />
+    <NavigationProperty Name="Position" Relationship="Self.FK_Worker_Position" FromRole="Worker" ToRole="Position" />
+    <NavigationProperty Name="Region" Relationship="Self.FK_Worker_Region" FromRole="Worker" ToRole="Region" />
+    <NavigationProperty Name="Settlement" Relationship="Self.FK_Worker_Settlement" FromRole="Worker" ToRole="Settlement" />
+    <NavigationProperty Name="Street" Relationship="Self.FK_Worker_Street" FromRole="Worker" ToRole="Street" />
+  </EntityType>
+  <Association Name="FK_Worker_AcademicDegree">
+    <End Role="AcademicDegree" Type="Self.AcademicDegree" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicDegree">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="AcademicDegreeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_AcademicTitle">
+    <End Role="AcademicTitle" Type="Self.AcademicTitle" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="AcademicTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Coutry">
+    <End Role="Coutry" Type="Self.Coutry" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coutry">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Division">
+    <End Role="Division" Type="Self.Division" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Division">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_EducationalInstitution">
+    <End Role="EducationalInstitution" Type="Self.EducationalInstitution" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EducationalInstitution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="EdInstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_Specialization">
+    <End Role="Specialization" Type="Self.Specialization" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="SpecializationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmploymentRecord_Organization">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="EmploymentRecord" Type="Self.EmploymentRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmploymentRecord">
+        <PropertyRef Name="OrganizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmploymentRecord_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+    <End Role="EmploymentRecord" Type="Self.EmploymentRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmploymentRecord">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmploymentRecord_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+    <End Role="EmploymentRecord" Type="Self.EmploymentRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmploymentRecord">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersObjects_Objects">
+    <End Role="Objects" Type="Self.Objects" Multiplicity="1" />
+    <End Role="UsersObjects" Type="Self.UsersObjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Objects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersObjects">
+        <PropertyRef Name="ObjectsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Settlement">
+    <End Role="Settlement" Type="Self.Settlement" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Settlement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="SettlementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_Street">
+    <End Role="Street" Type="Self.Street" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="StreetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersObjects_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UsersObjects" Type="Self.UsersObjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersObjects">
+        <PropertyRef Name="UsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UniversituHREntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AcademicDegree" EntityType="Self.AcademicDegree" />
+    <EntitySet Name="AcademicTitle" EntityType="Self.AcademicTitle" />
+    <EntitySet Name="Coutry" EntityType="Self.Coutry" />
+    <EntitySet Name="Division" EntityType="Self.Division" />
+    <EntitySet Name="Education" EntityType="Self.Education" />
+    <EntitySet Name="EducationalInstitution" EntityType="Self.EducationalInstitution" />
+    <EntitySet Name="EmploymentRecord" EntityType="Self.EmploymentRecord" />
+    <EntitySet Name="Objects" EntityType="Self.Objects" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" />
+    <EntitySet Name="Position" EntityType="Self.Position" />
+    <EntitySet Name="Region" EntityType="Self.Region" />
+    <EntitySet Name="Settlement" EntityType="Self.Settlement" />
+    <EntitySet Name="Specialization" EntityType="Self.Specialization" />
+    <EntitySet Name="Street" EntityType="Self.Street" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UsersObjects" EntityType="Self.UsersObjects" />
+    <EntitySet Name="Worker" EntityType="Self.Worker" />
+    <AssociationSet Name="FK_Worker_AcademicDegree" Association="Self.FK_Worker_AcademicDegree">
+      <End Role="AcademicDegree" EntitySet="AcademicDegree" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_AcademicTitle" Association="Self.FK_Worker_AcademicTitle">
+      <End Role="AcademicTitle" EntitySet="AcademicTitle" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Coutry" Association="Self.FK_Worker_Coutry">
+      <End Role="Coutry" EntitySet="Coutry" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Division" Association="Self.FK_Worker_Division">
+      <End Role="Division" EntitySet="Division" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_EducationalInstitution" Association="Self.FK_Education_EducationalInstitution">
+      <End Role="EducationalInstitution" EntitySet="EducationalInstitution" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_Specialization" Association="Self.FK_Education_Specialization">
+      <End Role="Specialization" EntitySet="Specialization" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_Worker" Association="Self.FK_Education_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmploymentRecord_Organization" Association="Self.FK_EmploymentRecord_Organization">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="EmploymentRecord" EntitySet="EmploymentRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmploymentRecord_Position" Association="Self.FK_EmploymentRecord_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="EmploymentRecord" EntitySet="EmploymentRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmploymentRecord_Worker" Association="Self.FK_EmploymentRecord_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="EmploymentRecord" EntitySet="EmploymentRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersObjects_Objects" Association="Self.FK_UsersObjects_Objects">
+      <End Role="Objects" EntitySet="Objects" />
+      <End Role="UsersObjects" EntitySet="UsersObjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Position" Association="Self.FK_Worker_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Region" Association="Self.FK_Worker_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Settlement" Association="Self.FK_Worker_Settlement">
+      <End Role="Settlement" EntitySet="Settlement" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_Street" Association="Self.FK_Worker_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Worker" EntitySet="Worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersObjects_Users" Association="Self.FK_UsersObjects_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersObjects" EntitySet="UsersObjects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

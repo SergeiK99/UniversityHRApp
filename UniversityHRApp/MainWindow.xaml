@@ -1,0 +1,30 @@
+﻿<Window x:Class="UniversityHRApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniversityHRApp"
+        mc:Ignorable="d"
+        Title="Отдел кадров университета" Height="92.112" Width="505.03" WindowStartupLocation="Manual" Icon="iQdW6_Iz4Gg.jpg">
+    <Grid Margin="0,0,0,-4">
+        <Menu HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="497">
+            <MenuItem Header="Разное">
+                <MenuItem x:Name="RePass" Header="Сменить пароль" Click="RePass_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="miWorker" Header="Сотрудники" Height="55" Click="miWorker_Click"/>
+            <MenuItem x:Name="miTK" Header="Трудовые книжки" Click="miTK_Click"/>
+            <MenuItem Header="Документы"/>
+            <MenuItem Header="Справочники">
+                <MenuItem x:Name="menuPos" Header="Должности" Click="menuPos_Click"/>
+                <MenuItem x:Name="menuEd" Header="Образования"/>
+                <MenuItem x:Name="menuOrg" Header="Организации"/>
+                <MenuItem x:Name="menuDiv" Header="Подразделения"/>
+                <MenuItem x:Name="menuBorn" Header="Места рождения"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
