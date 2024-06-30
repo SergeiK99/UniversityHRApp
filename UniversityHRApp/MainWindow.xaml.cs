@@ -51,5 +51,16 @@ namespace UniversityHRApp
             ListPos form = new ListPos();
             form.ShowDialog();
         }
+
+        private void menuEd_Click(object sender, RoutedEventArgs e)
+        {
+            ListEducation form = new ListEducation();
+            form.ShowDialog();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Программа для отдела кадров университета");
+        }
     }
 }

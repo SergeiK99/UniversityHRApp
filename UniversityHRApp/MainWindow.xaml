@@ -13,16 +13,12 @@
             </MenuItem>
             <MenuItem x:Name="miWorker" Header="Сотрудники" Height="55" Click="miWorker_Click"/>
             <MenuItem x:Name="miTK" Header="Трудовые книжки" Click="miTK_Click"/>
-            <MenuItem Header="Документы"/>
             <MenuItem Header="Справочники">
                 <MenuItem x:Name="menuPos" Header="Должности" Click="menuPos_Click"/>
-                <MenuItem x:Name="menuEd" Header="Образования"/>
-                <MenuItem x:Name="menuOrg" Header="Организации"/>
-                <MenuItem x:Name="menuDiv" Header="Подразделения"/>
-                <MenuItem x:Name="menuBorn" Header="Места рождения"/>
+                <MenuItem x:Name="menuEd" Header="Образования" Click="menuEd_Click"/>
             </MenuItem>
             <MenuItem Header="Справка">
-                <MenuItem Header="О программе"/>
+                <MenuItem Header="О программе" Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
 

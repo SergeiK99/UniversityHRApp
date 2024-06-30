@@ -13,7 +13,7 @@
         <TextBox x:Name="tbOldPass" HorizontalAlignment="Left" Height="42" Margin="375,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="18"/>
         <TextBox x:Name="tbNewPass" HorizontalAlignment="Left" Height="42" Margin="375,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="18"/>
         <TextBox x:Name="tbConfirmPass" HorizontalAlignment="Left" Height="42" Margin="375,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="18"/>
-        <Button x:Name="btOk" Content="Вход" HorizontalAlignment="Left" Margin="290,290,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24"/>
+        <Button x:Name="btOk" Content="Вход" HorizontalAlignment="Left" Margin="290,290,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24" Click="btOk_Click"/>
         <Button x:Name="btCancel" Content="Отмена" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24" Click="btCancel_Click"/>
 
     </Grid>

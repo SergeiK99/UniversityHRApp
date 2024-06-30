@@ -13,5 +13,8 @@ namespace UniversityHRApp
     /// </summary>
     public partial class App : Application
     {
+        public static UniversituHREntities DB = new UniversituHREntities();
+        public static Users User { get; set; }
+        public static UsersObjects Rights { get; set; }
     }
 }

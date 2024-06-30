@@ -12,8 +12,8 @@
         <Label Content="Пароль:" HorizontalAlignment="Left" Margin="207,228,0,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="tbLog" HorizontalAlignment="Left" Height="42" Margin="309,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" FontSize="18"/>
         <TextBox x:Name="tbPass" HorizontalAlignment="Left" Height="42" Margin="309,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" FontSize="18"/>
-        <Button x:Name="btOk" Content="Вход" HorizontalAlignment="Left" Margin="309,296,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24"/>
-        <Button x:Name="btCancel" Content="Отмена" HorizontalAlignment="Left" Margin="309,356,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24"/>
+        <Button x:Name="btOk" Content="Вход" HorizontalAlignment="Left" Margin="309,296,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24" Click="btOk_Click"/>
+        <Button x:Name="btCancel" Content="Отмена" HorizontalAlignment="Left" Margin="309,356,0,0" VerticalAlignment="Top" Width="181" Height="42" FontSize="24" Click="btCancel_Click"/>
 
     </Grid>
 </Window>

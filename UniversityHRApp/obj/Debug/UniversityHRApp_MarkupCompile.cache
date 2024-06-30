@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\App.xaml
-9-453245559
-2-1540542950
-342038162020
-18-1655320774
-MainWindow.xaml;Windows\AddPos.xaml;Windows\AddWorker.xaml;Windows\EditEployRec.xaml;Windows\ListEployRec.xaml;Windows\ListPos.xaml;Windows\ListWorkers.xaml;Windows\Log.xaml;Windows\RePass.xaml;
+11823273866
+2-1185442123
+371196470217
+18-1610562285
+MainWindow.xaml;Windows\AddEducation.xaml;Windows\AddPos.xaml;Windows\AddWorker.xaml;Windows\EditEployRec.xaml;Windows\ListEducation.xaml;Windows\ListEployRec.xaml;Windows\ListPos.xaml;Windows\ListWorkers.xaml;Log.xaml;Windows\RePass.xaml;
 
 False
 

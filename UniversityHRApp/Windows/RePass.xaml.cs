@@ -29,5 +29,10 @@ namespace UniversityHRApp.Windows
             this.DialogResult = false;
             Close();
         }
+
+        private void btOk_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,7 +1,6 @@
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\bin\Debug\UniversityHRApp.exe.config
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\bin\Debug\UniversityHRApp.exe
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\bin\Debug\UniversityHRApp.pdb
-C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\UniversityHRApp.csprojAssemblyReference.cache
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\MainWindow.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\App.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\UniversityHRApp_MarkupCompile.cache
@@ -27,11 +26,17 @@ C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\Lis
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\ListEployRec.baml
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\EditEployRec.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\EditEployRec.baml
-C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\Log.g.cs
-C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\Log.baml
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\RePass.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\RePass.baml
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\ListPos.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\ListPos.baml
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\AddPos.g.cs
 C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\AddPos.baml
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Log.g.cs
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Log.baml
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\AddEducation.g.cs
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\ListEducation.g.cs
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\AddEducation.baml
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\Windows\ListEducation.baml
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\UniversityHRApp.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\UniversityHRApp\UniversityHRApp\obj\Debug\UniversityHRApp.csproj.CoreCompileInputs.cache
